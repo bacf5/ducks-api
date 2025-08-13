@@ -3,6 +3,7 @@ const User = require('../models/User');
 
 const router = express.Router();
 
+// Creates a new user and saves it to the database
 router.post('/register', async (req, res) => {
   const { name, email } = req.body;
 
