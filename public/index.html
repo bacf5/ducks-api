@@ -494,7 +494,7 @@
         <nav>
           <ul class="nav-menu" id="nav-menu">
             <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">API</a></li>
             <li class="nav-item"><a href="#services" class="nav-link">Service</a></li>
             <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
             <li class="nav-item"><a href="#gallery" class="nav-link">Images</a></li>
@@ -512,9 +512,9 @@
             <p class="subtitle">If you want to get your duck fact of the day, this is your website.</p>
             
                <div id="fact-quote" class="quote"></div>
-               <br>
+               
 
-          <p>
+          <p class="subtitle">
             This website is dedicated to spreading knowledge and appreciation for ducks. Facts from their migratory patterns to their social
             behaviors, there's always something new to learn about ducks!
           
@@ -528,10 +528,43 @@
         </div>
       </section>
 
-      <section id="about" class="container reveal">
-        <h2 class="section-title">How does it work?</h2>
-        <p style="text-align: center; max-width: 800px; margin: 2rem auto">
-          hola manola
+      <section id="about" href="#about" class="container reveal">
+        <h2 class="section-title">How to use the API</h2>
+        <!-- before -> max-width: 800px --> 
+        <p style="text-align: center; margin: 1rem auto">
+          <span style="color: #81b29a; font-size:20px">&#8250;</span> Fetch a Random Fact 
+          <br>
+          <br>
+
+          This endpoint returns a random, interesting fact. You must provide your API key in the request headers.
+         <div style="background: #ffffff; overflow:auto;width:auto;border:solid rgba(129, 178, 154, 0.8) ;border-width:.1em .1em .1em .8em;padding:.2em .2em;"><pre style="margin: 0; line-height: 125%;"><span></span>GET<span style="color: #BBB"> </span><span style="color: #333">/</span>api<span style="color: #333">/</span>facts<span style="color: #333">/</span>random</pre></div>
+
+         <p style="text-align: center; margin: 1rem auto">and the API response would look like this:</p>
+
+        
+        
+          <div style="background: #ffffff; overflow:auto;width:auto;border:solid rgba(129, 178, 154, 0.8) ;border-width:.1em .1em .1em .8em;padding:.2em .2em;"><pre style="margin: 0; line-height: 125%;">
+{
+<span style="color: #BBB">  </span><span>&quot;_id&quot;</span><span style="color: #333">:</span><span style="color: #BBB"> </span><span style="background-color: #FFF0F0">&quot;689cbdfe9d1ce8e4522a9bd5&quot;</span>,
+<span style="color: #BBB">  </span><span>&quot;id&quot;</span><span style="color: #333">:</span><span style="color: #BBB"> </span><span style="color: #81b29a; font-weight: bold">54</span>,
+<span style="color: #BBB">  </span><span>&quot;fact&quot;</span><span style="color: #333">:</span><span style="color: #BBB"> </span><span style="background-color: #FFF0F0">&quot;Most duck species are monogamous for a breeding season but typically find new mates each year.&quot;</span>
+}
+          </pre></div></p>
+        
+      <p style="text-align: center; margin: 1rem auto"><span style="color: #81b29a; font-size:20px">&#8250;</span> Fetch API usage details
+        <br>
+        <br>
+      This endpoint allows you to check your remaining API credits. You must provide your API key in the request headers.
+         <div style="background: #ffffff; overflow:auto;width:auto;border:solid rgba(129, 178, 154, 0.8) ;border-width:.1em .1em .1em .8em;padding:.2em .2em;"><pre style="margin: 0; line-height: 125%;"><span></span>GET<span style="color: #BBB"> </span><span style="color: #333">/</span>api<span style="color: #333">/</span>usage</pre></div>
+
+         <p style="text-align: center; margin: 1rem auto">and the API response would look like this:</p>
+        <div style="background: #ffffff; overflow:auto;width:auto;border:solid rgba(129, 178, 154, 0.8) ;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%;"><span></span>{
+<span style="color: #BBB">  </span>&quot;message&quot;<span style="color: #333">:</span><span style="color: #BBB"> </span><span style="background-color: #FFF0F0">&quot;API usage details&quot;</span>,
+<span style="color: #BBB">  </span>&quot;remainingCredits&quot;<span style="color: #333">:</span><span style="color: #BBB"> </span><span style="color: #81b29a; font-weight: bold">332</span>
+}
+</pre></div>
+
+
         </p>
       </section>
 
