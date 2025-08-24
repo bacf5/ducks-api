@@ -651,6 +651,86 @@
   margin: 1em 0 0 0.75em;
 }
 
+/* FORM CSS */
+
+.content {
+  width: 360px;
+  height: 40px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, .2);
+  border-radius: 60px;
+  overflow: hidden;
+}
+
+
+.subscription {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.subscription .add-email{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+}
+
+.subscription .submit-email {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: calc(100% - 2px);
+  width: 100px;
+  border: none;
+  border-radius: 60px;
+  outline: none;
+  margin: 1px;
+  padding: 0 20px;
+  cursor: pointer;
+  background: var(--accent-color);
+  color: #FFFFFF;
+  transition: width .35s ease-in-out,
+    background .35s ease-in-out;
+}
+
+.subscription.done .submit-email {
+  width: calc(100% - 2px);
+  background: var(--accent-hover-color);
+}
+
+.subscription .submit-email .before-submit,
+.subscription .submit-email .after-submit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 38px;
+  transition: visibility .35s ease-in-out,
+    opacity .35s ease-in-out;
+}
+
+.subscription.done .submit-email .before-submit,
+.subscription:not(.done) .submit-email .after-submit {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.subscription .submit-email .after-submit {
+  transition-delay: .35s;
+}
+
+.subscription:not(.done) .submit-email .before-submit,
+.subscription.done .submit-email .after-submit {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* ================ Timeline Media Queries ================ */
 
 @media screen and (max-width: 992px) {
@@ -798,6 +878,18 @@
           If you have any interesting duck facts you'd like to share, feel free to reach out to me. Quack on!
             </p>
             <a href="" class="btn" style="margin-top: 2rem"> Get API Key</a>
+            <br/>
+            <br/>
+            <!-- FORM -->
+            <div class="content container">
+            <form class="subscription">
+              <input class="add-email" type="email" placeholder="youremail@me.com">
+                <button class="submit-email" type="button">
+                  <span class="before-submit">Get API Key</span>
+                  <span class="after-submit">API Key sent! ♡</spa>
+                </button>
+            </form>
+            </div>
           </div>
           <div class="hero-image reveal">
             <img src="/duck-acuarela.jpg" alt="Duck painting in aquarella" />
@@ -900,7 +992,7 @@
     <footer class="footer">
       <div class="container">
         <div class="social-links">
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://x.com/bcarusofassa" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           <a href="https://github.com/bacf5/ducks-api" aria-label="GitHub"><i class="fab fa-github"></i></a>
           <!-- <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a> -->
         </div>
@@ -909,6 +1001,12 @@
     </footer>
 
     <script>
+
+document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
+  e.preventDefault();
+  document.querySelector('.subscription').classList.add('done');
+});
+
       document.addEventListener('DOMContentLoaded', () => {
         const preloader = document.getElementById('preloader');
         window.addEventListener('load', () => {
