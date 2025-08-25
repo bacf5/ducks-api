@@ -17,7 +17,7 @@ const sendEmail = async (email, apiKey) => {
     const mailOptions = {
       from: {
         name: 'Ducks API',
-        address: 'ducksapi@gmail.com',
+        address: process.env.GMAIL_USER,
       },
       to: email,
       subject: 'Welcome to Ducks API',
