@@ -1,23 +1,30 @@
 const express = require('express');
 const User = require('../models/User');
-// const transporter = require('../utils/mailer');
+const validator = require('validator');
 const sendEmail = require('../utils/mailer');
-
 require('dotenv').config();
 
 const router = express.Router();
 
 // Creates a new user and saves it to the database
 router.post('/register', async (req, res) => {
+  const { name, email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ message: 'Email required' });
+  }
+
+  if (!validator.isEmail(email)) {
+    return res.status(400).json({ message: 'Invalid email' });
+  }
+
+  let user = await User.findOne({ email });
+
+  if (user) {
+    return res.status(400).json({ message: 'User already exists' });
+  }
+
   try {
-    const { name, email } = req.body;
-
-    let user = await User.findOne({ email });
-
-    if (user) {
-      return res.status(400).json({ message: 'User already exists' });
-    }
-
     user = new User({
       name,
       email,
