@@ -15,8 +15,6 @@ app.use(express.static('public'));
 
 const PORT = process.env.PORT || 3000;
 
-// test mailer connection
-
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB is connected'))
