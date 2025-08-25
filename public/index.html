@@ -768,14 +768,15 @@
             <!-- FORM -->
             <p><span style="color: #81b29a; font-size:20px">&#8250;</span> If you want an API key for your website/app:</p>
             <div class="content">
-            <form class="subscription">
-              <input class="add-email" type="email" placeholder="youremail@me.com">
-                <button class="submit-email" type="button">
+            <form id="subscription" class="subscription">
+              <input id="email" class="add-email" type="email" placeholder="youremail@me.com">
+                <button class="submit-email" type="submit">
                   <span class="before-submit">Get API Key</span>
-                  <span class="after-submit">API Key sent! ♡</spa>
+                  <span class="after-submit">API Key sent! ♡</span>
                 </button>
             </form>
             </div>
+            <p id="message"></p>
           </div>
           <div class="hero-image reveal">
             <img src="/duck-acuarela.jpg" alt="Duck painting in aquarella" />
@@ -888,10 +889,10 @@
 
     <script>
 
-document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
-  e.preventDefault();
-  document.querySelector('.subscription').classList.add('done');
-});
+// document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
+//   e.preventDefault();
+//   document.querySelector('.subscription').classList.add('done');
+// });
 
       document.addEventListener('DOMContentLoaded', () => {
         const preloader = document.getElementById('preloader');
@@ -926,6 +927,7 @@ document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
             }
           });
         });
+
 
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver(
@@ -982,6 +984,55 @@ document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
           // console.log(data)
         })
         });
+
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById("subscription");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          
+          const email = document.getElementById("email").value.trim()
+          
+          if(!email) {
+            message.textContent = "Email is required"
+            message.style.color = "red";
+            return
+          }
+
+          // console.log(email)
+
+          try {
+            const res = await fetch("http://localhost:3000/api/auth/register", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"},
+              body: JSON.stringify({email}),
+            });
+
+            const data = await res.json()
+            if (res.ok) {
+              document.querySelector('.subscription').classList.add('done')
+              message.remove()
+
+            } else if (res.status === 400) {
+              message.textContent = data.error || "Email already exists"
+              message.style.color = "red";
+            } else {
+              message.textContent = data.error || "Something went wrong"
+              message.style.color = "red";
+            }
+
+          } catch (err) {
+            console.log(err)
+            message.textContent = "Network error"
+            message.style.color = "red";
+          }
+
+        })
+        })
+
+
 
         sections.forEach((section) => {
           navHighlighter.observe(section);
