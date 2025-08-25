@@ -972,14 +972,14 @@ document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
         fetch('https://api-ducks.onrender.com/api/facts/random', {
           method: 'GET',
           headers: {
-            "X-api-key": "ee0691a6-0f73-40ad-a4e3-e9de3b34a966"
+            "X-api-key": "ee0691a6-0f73-40ad-a4e3-e9de3b34a966" // Upsie an API key here lmao! but if you curious enough to find this, you deserve a cookie
           }
         }).then(res => {
           if (!res.ok) throw new Error('Request failed');
           return res.json();
         }).then(data => {
           factQuote.textContent = `"${data.fact}"`;
-          console.log(data)
+          // console.log(data)
         })
         });
 
