@@ -11,6 +11,7 @@ const apiKeyAuth = async (req, res, next) => {
   if (user.credits <= 0) {
     return res.status(402).json({ message: 'just make another account lmao' });
   }
+  // if you need more credits, don't hesitate to ask
 
   user.credits -= 1;
   await user.save();
