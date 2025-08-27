@@ -5,6 +5,7 @@ Welcome to the d**ucks-facts API**! This API provides a simple way to access int
 ## Getting Started
 
 To start using the ducks-facts API, you'll first need to register to obtain an API key. This key will be used to authenticate your requests and track your usage.
+
 - [Register for an API Key](#3-register-for-an-api-key)
 
 ## Authentication
@@ -35,7 +36,6 @@ This endpoint returns a random, interesting fact. You must provide your API key 
   "id": 54,
   "fact": "Most duck species are monogamous for a breeding season but typically find new mates each year."
 }
-
 ```
 
 ### 2. Check API Usage
@@ -76,5 +76,11 @@ Use this endpoint to obtain a new API key. Upon successful registration, you wil
   "apiKey": "YOUR_NEWLY_GENERATED_API_KEY",
   "initialCredits": 500
 }
-
 ```
+
+## Next steps
+
+- [ ] Add some high-quality duck images
+- [ ] Expand API endpoints for image delivery
+- [ ] The chance to add custom duck facts into the API
+- [ ] Community image upload
