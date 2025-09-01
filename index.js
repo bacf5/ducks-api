@@ -13,7 +13,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api', factsRoutes);
 app.use(express.static('public'));
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
 mongoose
   .connect(process.env.MONGO_URI)
