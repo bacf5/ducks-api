@@ -990,7 +990,7 @@
         
         window.addEventListener('DOMContentLoaded', () => {
         const factQuote = document.getElementById('fact-quote');
-        fetch('https://api-ducks.onrender.com/api/facts/random', {
+        fetch('https://duck-api.netlify.app/api/facts/random', {
           method: 'GET',
           headers: {
             "X-api-key": "ee0691a6-0f73-40ad-a4e3-e9de3b34a966" // Upsie an API key here lmao! but if you curious enough to find this, you deserve a cookie
@@ -1027,7 +1027,7 @@
           // console.log(email)
 
           try {
-            const res = await fetch("https://api-ducks.onrender.com/api/auth/register", {
+            const res = await fetch("https://duck-api.netlify.app/api/auth/register", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"},
