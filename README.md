@@ -1,6 +1,12 @@
-# Ducks-Facts API
+<h2 align="center">
+  Ducks-Facts API 🦆 
+</h2>
 
-Welcome to the **ducks-facts API**! This API provides a simple way to access interesting and random facts, manage your API usage, and register for new API keys.
+<p align="center"><img alt="image" src="public/duck-api-landing.png"></p>
+
+[<h2 align="center">Deployment status:‎ ‎ ![Netlify Status](https://api.netlify.com/api/v1/badges/e9af6d0b-60b1-4be0-a98c-7996ff7b0dbd/deploy-status)](https://app.netlify.com/projects/duck-api/deploys)</h2>
+<br>
+This API provides a simple way to access interesting and random facts, manage your API usage, and register for new API keys. The API will have images available soon.
 
 ## Getting Started
 
