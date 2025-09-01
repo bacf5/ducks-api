@@ -1,6 +1,6 @@
 # Ducks-Facts API
 
-Welcome to the d**ucks-facts API**! This API provides a simple way to access interesting and random facts, manage your API usage, and register for new API keys.
+Welcome to the **ducks-facts API**! This API provides a simple way to access interesting and random facts, manage your API usage, and register for new API keys.
 
 ## Getting Started
 
