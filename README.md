@@ -14,9 +14,23 @@ To start using the ducks-facts API, you'll first need to register to obtain an A
 
 - [Register for an API Key](#3-register-for-an-api-key)
 
+## Register for an API Key
+
+To register for an API key, use the form on the [website](https://duck-api.netlify.app/). Youll receive an email with your API key.
+
+<p align="center"><img alt="image" src="public/register-key.gif"></p>
+
+```json
+{
+  "message": "Registration successful!",
+  "apiKey": "YOUR_NEWLY_GENERATED_API_KEY",
+  "initialCredits": 500
+}
+```
+
 ## Authentication
 
-All authenticated endpoints require your API key to be sent in the `x-api-key` header of your HTTP requests.
+All authenticated endpoints require your API key to be sent in the `X-api-key` header of your HTTP requests.
 
 **Example Header:**
 
@@ -58,29 +72,6 @@ This endpoint allows you to check your remaining API credits. You must provide y
 {
   "message": "API usage details",
   "remainingCredits": 481
-}
-```
-
-### 3. Register for an API Key
-
-`POST /api/register`
-
-Use this endpoint to obtain a new API key. Upon successful registration, you will be granted 500 initial credits.
-
-### Request Body:
-
-```json
-{
-  "name": "yourname",
-  "email": "email@email.com"
-}
-```
-
-```json
-{
-  "message": "Registration successful!",
-  "apiKey": "YOUR_NEWLY_GENERATED_API_KEY",
-  "initialCredits": 500
 }
 ```
 
