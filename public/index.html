@@ -1042,17 +1042,21 @@
             } else if (res.status === 400) {
               message.textContent = data.error || "Email already exists"
               message.style.color = "red";
+              spanGetApi.style.display = "inline-block";
             } else {
               message.textContent = data.error || "Something went wrong"
               message.style.color = "red";
+              spanGetApi.style.display = "inline-block";
             }
 
           } catch (err) {
             console.log(err)
             message.textContent = "Network error"
             message.style.color = "red";
+            spanGetApi.style.display = "inline-block";
           } finally {
             spinner.style.display = "none";
+            spanGetApi.style.display = "inline-block";
           }
 
         })
