@@ -9,7 +9,7 @@ const apiKeyAuth = async (req, res, next) => {
   if (!user) return res.status(403).json({ message: 'Invalid API key' });
 
   if (user.credits <= 0) {
-    return res.status(402).json({ message: 'just make another account lmao' });
+    return res.status(402).json({ message: 'No more credits. Just make another account lmao' });
   }
   // if you need more credits, don't hesitate to ask
 
