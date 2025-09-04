@@ -7,6 +7,7 @@ const router = express.Router();
 router.get('/facts/random', apiKeyAuth, async (req, res) => {
   try {
     const randomFact = await Fact.aggregate([{ $sample: { size: 1 } }]);
+
     if (randomFact.length > 0) {
       res.status(200).json(randomFact[0]);
     } else {
@@ -17,12 +18,6 @@ router.get('/facts/random', apiKeyAuth, async (req, res) => {
     res.status(500).json({ message: 'Error fetching random fact' });
   }
 });
-
-// Protected route - Create a new fact and save to the db
-// router.post("/facts/create", apiKeyAuth, async (req, res) => {
-//   try
-
-// })
 
 // Gives you the amount of credits left
 router.get('/usage', apiKeyAuth, (req, res) => {
