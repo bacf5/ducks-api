@@ -7,9 +7,10 @@ const router = express.Router();
 router.get('/facts/random', apiKeyAuth, async (req, res) => {
   try {
     const randomFact = await Fact.aggregate([{ $sample: { size: 1 } }]);
+    const { id, fact } = randomFact[0];
 
     if (randomFact.length > 0) {
-      res.status(200).json(randomFact[0]);
+      res.status(200).json({ id, fact });
     } else {
       res.status(404).json({ message: 'No facts found in db' });
     }
