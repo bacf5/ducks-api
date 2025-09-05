@@ -47,11 +47,10 @@ This endpoint returns a random, interesting fact. You must provide your API key 
 
 ### Headers:
 
-- `x-api-key`: Your API key.
+- `X-api-key`: Your API key.
 
 ```json
 {
-  "_id": "689cbdfe9d1ce8e4522a9bd5",
   "id": 54,
   "fact": "Most duck species are monogamous for a breeding season but typically find new mates each year."
 }
@@ -65,7 +64,7 @@ This endpoint allows you to check your remaining API credits. You must provide y
 
 ### Headers:
 
-- `x-api-key`: Your API key.
+- `X-api-key`: Your API key.
 
 ```json
 {
@@ -76,7 +75,7 @@ This endpoint allows you to check your remaining API credits. You must provide y
 
 ## Next steps
 
-- [ ] Add some high-quality duck images
-- [ ] Expand API endpoints for image delivery
+- [x] ~~Add some high-quality duck images~~
+- [x] ~~Expand API endpoints for image delivery~~
 - [ ] The chance to add custom duck facts into the API
 - [ ] Community image upload
