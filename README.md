@@ -79,7 +79,7 @@ This endpoint allows you to check your remaining API credits. You must provide y
 
 `GET /api/image/random`
 
-This endpoint allows you to check your remaining API credits. You must provide your API key in the request headers.
+This endpoint allows you to get a random image. You must provide your API key in the request headers.
 
 ### Headers:
 
