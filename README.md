@@ -12,6 +12,8 @@ This API provides a simple way to access interesting and random facts. The API w
 
 To start using the ducks-facts API, you'll first need to register to obtain an API key. This key will be used to authenticate your requests and track your usage.
 
+`base url - https://duck-api.netlify.app`
+
 ### Register for an API Key
 
 To register for an API key, fill out the form on our [website](https://duck-api.netlify.app/). You’ll receive your key by email.
@@ -56,7 +58,7 @@ This endpoint returns a random, interesting fact. You must provide your API key 
 }
 ```
 
-## 2. Check API Usage
+### 2. Check API Usage
 
 `GET /api/usage`
 
@@ -73,9 +75,27 @@ This endpoint allows you to check your remaining API credits. You must provide y
 }
 ```
 
+### 3. Get a Random Image
+
+`GET /api/image/random`
+
+This endpoint allows you to check your remaining API credits. You must provide your API key in the request headers.
+
+### Headers:
+
+- `X-api-key`: Your API key.
+
+```json
+{
+  "id": 32,
+  "url": "https://ik.imagekit.io/duckapi/32.jpg"
+}
+```
+
 ## Next steps
 
 - [x] ~~Add some high-quality duck images~~
 - [x] ~~Expand API endpoints for image delivery~~
 - [ ] The chance to add custom duck facts into the API
 - [ ] Community image upload
+- [ ] Posibility to search image and fact by id
