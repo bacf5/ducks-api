@@ -90,11 +90,9 @@
         
           <div style="background: #ffffff; overflow:auto;width:auto;border:solid rgba(129, 178, 154, 0.8) ;border-width:.1em .1em .1em .8em;padding:.2em .2em;"><pre style="margin: 0; line-height: 125%;">
 {
-<span style="color: #BBB">  </span><span>&quot;_id&quot;</span><span style="color: #333">:</span><span style="color: #BBB"> </span><span style="background-color: #FFF0F0">&quot;689cbdfe9d1ce8e4522a9bd5&quot;</span>,
 <span style="color: #BBB">  </span><span>&quot;id&quot;</span><span style="color: #333">:</span><span style="color: #BBB"> </span><span style="color: #81b29a; font-weight: bold">54</span>,
 <span style="color: #BBB">  </span><span>&quot;fact&quot;</span><span style="color: #333">:</span><span style="color: #BBB"> </span><span style="background-color: #FFF0F0">&quot;Most duck species are monogamous for a breeding season but typically find new mates each year.&quot;</span>
-}
-          </pre></div></p>
+}</pre></div></p>
         
       <p style="text-align: center; margin: 1rem auto"><span style="color: #81b29a; font-size:20px">&#8250;</span> Fetch API usage details
         <br>
@@ -106,6 +104,19 @@
         <div style="background: #ffffff; overflow:auto;width:auto;border:solid rgba(129, 178, 154, 0.8) ;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%;"><span></span>{
 <span style="color: #BBB">  </span>&quot;message&quot;<span style="color: #333">:</span><span style="color: #BBB"> </span><span style="background-color: #FFF0F0">&quot;API usage details&quot;</span>,
 <span style="color: #BBB">  </span>&quot;remainingCredits&quot;<span style="color: #333">:</span><span style="color: #BBB"> </span><span style="color: #81b29a; font-weight: bold">332</span>
+}
+</pre></div>
+
+  <p style="text-align: center; margin: 1rem auto"><span style="color: #81b29a; font-size:20px">&#8250;</span> Fetch a random image of ducks
+        <br>
+        <br>
+      This endpoint allows you to receive a random high quality image of ducks. You must provide your API key in the request headers.
+         <div style="background: #ffffff; overflow:auto;width:auto;border:solid rgba(129, 178, 154, 0.8) ;border-width:.1em .1em .1em .8em;padding:.2em .2em;"><pre style="margin: 0; line-height: 125%;"><span></span>GET<span style="color: #BBB"> </span><span style="color: #333">/</span>api<span style="color: #333">/</span>random<span style="color: #333">/</span>image</pre></div>
+
+         <p style="text-align: center; margin: 1rem auto">and the API response would look like this:</p>
+        <div style="background: #ffffff; overflow:auto;width:auto;border:solid rgba(129, 178, 154, 0.8) ;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%;"><span></span>{
+<span style="color: #BBB">  </span>&quot;id&quot;<span style="color: #333">:</span><span style="color: #BBB"> </span><span style="color: #81b29a; font-weight: bold">32</span>
+<span style="color: #BBB">  </span>&quot;url&quot;<span style="color: #333">:</span><span style="color: #BBB"> </span><span style="background-color: #FFF0F0;">&quot;https://ik.imagekit.io/duckapi/32.jpg&quot</span>
 }
 </pre></div>
 
@@ -131,7 +142,7 @@
 		<div class="direction-r">
 			<div class="flag-wrapper">
 				<span class="flag">Media Integration</span>
-				<span class="time-wrapper"><span class="time">Phase 3 ⇥</span></span>
+				<span class="time-wrapper"><span class="time">Phase 3 ✓</span></span>
 			</div>
 			<div class="desc">	•	Adding high-quality duck image hosting service
 	•	Expanding API endpoints for image delivery</div>
