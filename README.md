@@ -12,7 +12,7 @@ This API provides a simple way to access interesting and random facts. The API w
 
 To start using the ducks-facts API, you'll first need to register to obtain an API key. This key will be used to authenticate your requests and track your usage.
 
-`base url - https://duck-api.netlify.app`
+`base url: https://duck-api.netlify.app`
 
 ### Register for an API Key
 
