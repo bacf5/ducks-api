@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('https://duck-api.netlify.app/api/facts/random', {
       method: 'GET',
       headers: {
-        'X-api-key': 'ee0691a6-0f73-40ad-a4e3-e9de3b34a966', // Upsie an API key here lmao! but if you curious enough to find this, you deserve a cookie
+        'X-api-key': process.env.API_KEY,
       },
     })
       .then((res) => {
@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then((data) => {
         factQuote.textContent = `"${data.fact}"`;
-        // console.log(data)
       });
   });
 
