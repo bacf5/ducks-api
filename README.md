@@ -6,13 +6,13 @@
 
 [<h2 align="center">Deployment status:‎ ‎ ![Netlify Status](https://api.netlify.com/api/v1/badges/e9af6d0b-60b1-4be0-a98c-7996ff7b0dbd/deploy-status)](https://app.netlify.com/projects/duck-api/deploys)</h2>
 <br>
-This API provides a simple way to access interesting and random facts. The API will have images available soon.
+This API provides a simple way to access interesting and random facts. ~~The API will have images available soon.~~ Now has high quality images to deliver!
 
 ## Getting Started
 
 To start using the ducks-facts API, you'll first need to register to obtain an API key. This key will be used to authenticate your requests and track your usage.
 
-`base url: https://duck-api.netlify.app`
+base url: `https://duck-api.netlify.app`
 
 ### Register for an API Key
 
@@ -99,3 +99,7 @@ This endpoint allows you to get a random image. You must provide your API key in
 - [ ] The chance to add custom duck facts into the API
 - [ ] Community image upload
 - [ ] Posibility to search image and fact by id
+
+## Attributions
+
+- [Logo](https://www.flaticon.com/free-icons/duck) by Freepik from [Flaticon](https://www.flaticon.com/)
