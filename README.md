@@ -2,7 +2,7 @@
   Ducks-Facts API 🦆 
 </h2>
 
-<p align="center"><img alt="image" src="public/duck-api-landing.png"></p>
+<p align="center"><img alt="image" src="public/images/duck-api-landing.png"></p>
 
 [<h2 align="center">Deployment status:‎ ‎ ![Netlify Status](https://api.netlify.com/api/v1/badges/e9af6d0b-60b1-4be0-a98c-7996ff7b0dbd/deploy-status)](https://app.netlify.com/projects/duck-api/deploys)</h2>
 <br>
@@ -19,7 +19,7 @@ base url: `https://duck-api.netlify.app`
 To register for an API key, fill out the form on our [website](https://duck-api.netlify.app/). You’ll receive your key by email.
 <br>
 
-<p align="center"><img alt="image" src="public/register-key.gif"></p>
+<p align="center"><img alt="image" src="public/images/register-key.gif"></p>
 
 ```json
 {
