@@ -15,8 +15,6 @@ app.use('/api', factsRoutes);
 app.use('/api', imageRoutes);
 app.use(express.static('public'));
 
-// const PORT = process.env.PORT || 3000;
-
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB is connected'))
@@ -27,5 +25,3 @@ app.get('/', (req, res) => {
 });
 
 module.exports = app;
-
-// app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
