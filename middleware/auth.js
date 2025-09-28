@@ -1,4 +1,5 @@
 const User = require('../models/User');
+require('dotenv').config();
 
 const apiKeyAuth = async (req, res, next) => {
   const apiKey = req.header('X-api-key');
@@ -13,7 +14,13 @@ const apiKeyAuth = async (req, res, next) => {
   }
   // if you need more credits, don't hesitate to ask
 
-  user.credits -= 1;
+  const frontendapikey = proccess.env.API_KEY;
+  if (apiKey === frontendapikey) {
+    return;
+  } else {
+    user.credits -= 1;
+  }
+
   await user.save();
 
   req.user = user;
