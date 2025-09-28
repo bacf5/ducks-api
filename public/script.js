@@ -73,19 +73,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('DOMContentLoaded', () => {
     const factQuote = document.getElementById('fact-quote');
-    fetch('https://duck-api.netlify.app/api/facts/random', {
-      method: 'GET',
-      headers: {
-        'X-api-key': process.env.API_KEY,
-      },
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error('Request failed');
-        return res.json();
-      })
-      .then((data) => {
-        factQuote.textContent = `"${data.fact}"`;
-      });
+
+    try {
+      fetch('.netlify/functions/proxy')
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error('Request failed');
+          }
+          return res.json();
+        })
+        .then((data) => {
+          factQuote.textContent = `"${data.fact}"`;
+        });
+    } catch {
+      console.log('error');
+    }
   });
 
   window.addEventListener('DOMContentLoaded', () => {
@@ -106,8 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       spanGetApi.style.display = 'none';
       spinner.style.display = 'inline-block';
-
-      // console.log(email)
 
       try {
         const res = await fetch('https://duck-api.netlify.app/api/auth/register', {
