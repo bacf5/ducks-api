@@ -14,9 +14,9 @@ const apiKeyAuth = async (req, res, next) => {
   }
   // if you need more credits, don't hesitate to ask
 
-  const frontendapikey = proccess.env.API_KEY;
-  if (apiKey === frontendapikey) {
-    return;
+  const API_KEY = process.env.API_KEY;
+  if (apiKey === API_KEY) {
+    user.credits -= 0;
   } else {
     user.credits -= 1;
   }
