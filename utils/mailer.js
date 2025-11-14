@@ -21,7 +21,7 @@ const sendEmail = async (email, apiKey) => {
       },
       to: email,
       subject: 'Welcome to Ducks API',
-      text: 'Hello world',
+      text: 'Duck-API',
       html: `  <body style="font-family: Arial, sans-serif; background:#f9f9f9; padding:20px;">
     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; margin:auto; background:#fff; border:1px solid #ddd; border-radius:8px;">
       <tr>
