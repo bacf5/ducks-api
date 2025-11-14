@@ -242,6 +242,19 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel(0);
   });
 
+  window.addEventListener('DOMContentLoaded', () => {
+    const commit = document.getElementById('commit');
+    try {
+      fetch('https://api.github.com/repos/bacf5/ducks-api/commits/main')
+        .then((res) => res.json())
+        .then((data) => {
+          commit.textContent = data.sha.slice(0, 7);
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  });
+
   sections.forEach((section) => {
     navHighlighter.observe(section);
   });
