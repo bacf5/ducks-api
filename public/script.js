@@ -73,8 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('DOMContentLoaded', () => {
     const factQuote = document.getElementById('fact-quote');
+    const factQuoteLoader = document.getElementById('fact-quote-loader');
 
     try {
+      factQuoteLoader.removeAttribute('hidden');
       fetch('.netlify/functions/proxy')
         .then((res) => {
           if (!res.ok) {
@@ -83,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
           return res.json();
         })
         .then((data) => {
+          factQuoteLoader.setAttribute('hidden', true);
           factQuote.textContent = `"${data.fact}"`;
         });
     } catch {
