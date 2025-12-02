@@ -41,7 +41,7 @@ const sendEmail = async (email, apiKey) => {
           </p></div>
 
           <p style="margin:16px 0 0; font-size:11px; color:#666;">
-            Keep this key safe. You’ll use it to authenticate your API requests. Remember you have 500 credits per month, if you need more don't hesitate to ask!
+            Keep this key safe. You’ll use it to authenticate your API requests. Remember you have 500 credits per day, if you need more don't hesitate to ask!
           </p>
         </td>
       </tr>
