@@ -9,6 +9,15 @@ const apiKeyAuth = async (req, res, next) => {
   const user = await User.findOne({ apiKey });
   if (!user) return res.status(403).json({ message: 'Invalid API key' });
 
+  const now = new Date();
+  const lastReset = user.lastReset || new Date(0);
+  const isNewDay = now.toDateString() !== lastReset.toDateString();
+
+  if (isNewDay) {
+    user.credits = 500;
+    user.lastReset = now;
+  }
+
   if (user.credits <= 0) {
     return res.status(402).json({ message: 'No more credits. Just make another account lmao' });
   }
